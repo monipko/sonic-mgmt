@@ -1,0 +1,20 @@
+configuration_properties:
+dut_asn: 65102
+lo_ipv4: 10.1.0.2/32
+lo_ipv6: "fc00:10:1::2/128"
+
+
+mclag:
+domain_id: 1
+system_mac: 02:42:ac:11:00:02
+peerlink_vlan: 4094
+peerlink_ports: ["Ethernet0"]
+keepalive:
+src_ip: 169.254.0.1/31
+dst_ip: 169.254.0.0/31
+src_intf: Ethernet1
+
+
+vlan_configs:
+vlan100: {id: 100, ips_v4: ["192.168.0.2/24"], ips_v6: ["fc00:100::2/64"]}
+vlan101: {id: 101, ips_v4: ["192.168.1.2/24"], ips_v6: ["fc00:101::2/64"]}
