@@ -1,0 +1,20 @@
+topology:
+name: t0-mclag-vs
+type: t0
+properties:
+dut_num: 2
+podset_number: 1
+tor_number: 2
+max_tor_subnet_number: 2
+tor_subnet_size: 32
+DUT:
+dut1: 32
+dut2: 32
+ptf: true
+devices_interconnect_interfaces:
+- {device_a: dut1, port_a: Ethernet0, device_b: dut2, port_b: Ethernet0, name: peerlink, mode: l2-trunk, vlan_list: [4094]}
+- {device_a: dut1, port_a: Ethernet1, device_b: dut2, port_b: Ethernet1, name: iccp-keepalive, mode: l3}
+configuration_properties:
+common:
+ptf_ipv4: 10.255.0.100/24
+ptf_ipv6: "fc00:1::100/64"
